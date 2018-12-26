@@ -1,7 +1,9 @@
 <?php
 namespace IRON\Core\Console;
 use IRON\Core\Commun\{All};
+use IRON\Core\Store\Cache;
 use IRON\Core\Console\DispCommands;
+use IRON\Core\Load\Configuration;
 
 
 /**
@@ -27,6 +29,7 @@ class Terminal extends DispCommands
             $dotenv->load();
         	$obj = new DispCommands();
             $obj->arguments($this->term);
+
 	}
 
     /**
@@ -38,6 +41,8 @@ class Terminal extends DispCommands
      */
      public static function runCommands($app, $comand)
     {
+        new Configuration($app,'console');
+
         $comd = All::upperCase($comand).All::FILE_COMMAND;
         $src = All::DIR_SRC.All::upperCase($app).All::APP_COMMAND.DIRECTORY_SEPARATOR.$comd.'.php';
         try {
