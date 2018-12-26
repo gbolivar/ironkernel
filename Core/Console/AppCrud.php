@@ -216,10 +216,10 @@ class AppCrud extends App
         fputs($ar, "{");
         fputs($ar, '   public function __construct()'.PHP_EOL);
         fputs($ar, '   {');
-        fputs($ar, '       // $this->tabla = \'nameTable\';'.PHP_EOL);
-        fputs($ar, '       // $this->campoid = array(\'nameId\');'.PHP_EOL);
-        fputs($ar, '       // $this->campos = array(\'campos\');'.PHP_EOL);
-        fputs($ar, '       parent::__construct();'.PHP_EOL);
+        //fputs($ar, '       // $this->tabla = \'nameTable\';'.PHP_EOL);
+        //fputs($ar, '       // $this->campoid = array(\'nameId\');'.PHP_EOL);
+        //fputs($ar, '       // $this->campos = array(\'campos\');'.PHP_EOL);
+        fputs($ar, '       parent::start();'.PHP_EOL);
         fputs($ar, '   }'.PHP_EOL.PHP_EOL);
         // Permite extraer las entidades de la conexion actual desde la informacion schema
         fputs($ar, '    /**'.PHP_EOL);
