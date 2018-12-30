@@ -16,7 +16,7 @@ use Medoo\Medoo;
 
 class Base implements Constant
 {
-    use GenerateConexion, GenerateTablesConfigs, ConfigDatabase;
+    use GenerateConexion, GenerateTablesConfigs;
 
     public $idx;
     public $active;
@@ -42,7 +42,9 @@ class Base implements Constant
             // Clases donde fue instanciada
             $instan = get_class($this);
 
-            // APP\Admin\Model\PruebaModel
+            // Instancia a la conexion dinamica
+            $conn = new ConfigDatabase();
+            
             // Verificar que solo sea instanciado desde el modelo o el Core si lo hace de otra parte lanza exepcion
             if(\preg_match('/Model/',$instan) OR \preg_match('/Core/',$instan)){
                 if(!empty($tmp)){
@@ -56,10 +58,10 @@ class Base implements Constant
                     //$this->base = new Core($tmp);
                     // Conexion enviada por parametro
                     $indx = $tmp;
-                    $datos = $this->$indx();
+                    $datos = $conn->$indx();
 
                 }else{
-                    $datos = $this->default();
+                    $datos = $conn->default();
                 }
 
                 if((bool)Cache::get('conecDb')) {

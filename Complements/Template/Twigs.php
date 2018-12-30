@@ -113,9 +113,4 @@ class Twigs
               $this->item['Session'] = $this->getSessionAll();
               return $this;
         }
-
-     
-
-
-
 }
