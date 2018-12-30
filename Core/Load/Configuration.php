@@ -9,7 +9,7 @@ use IRON\Core\Commun\All;
  * @Author: Gregorio Bolívar <elalconxvii@gmail.com>
  * @Author: Blog: <http://gbbolivar.wordpress.com>
  * @Creation Date: 25/07/2017
- * @version: 0.7
+ * @version: 0.8
  */
 
 
@@ -106,6 +106,8 @@ class Configuration extends Cache
                // $dir2 = $this->getCache('dir_d_twig');
                // $this->twig = $commun->communIniTemplate($dir1, $dir2);
               //  echo $this->twig->render('baseMant.twig', $commun->initSendDataTwig());
+                break;
+            case 'console':
                 break;
             default:
                 All::modDevelopment();

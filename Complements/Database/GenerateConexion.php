@@ -43,7 +43,7 @@
               fputs($ar, ' */ '.PHP_EOL.PHP_EOL);
 
               // capturador del get que esta pasando por parametro
-              fputs($ar, 'trait ConfigDatabase'.PHP_EOL);
+              fputs($ar, 'class ConfigDatabase'.PHP_EOL);
               fputs($ar, "{".PHP_EOL.PHP_EOL);
               fputs($ar, '  public $motor;'.PHP_EOL);
               fputs($ar, '  public $host;'.PHP_EOL);
