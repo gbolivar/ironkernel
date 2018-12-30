@@ -71,7 +71,7 @@ Trait Main
 	 * @param fecha String, fecha que desea cambiar
 	 * @return fecha, el formato de fechq 	ue desea cambiar
 	 */
-	static function changeFecha(String $format, String $fecha)
+	static function changeDate(String $format, String $fecha)
 	{
 		$fecha = date($format, strtotime($fecha));
 		return $fecha;

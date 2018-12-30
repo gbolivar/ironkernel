@@ -4,7 +4,7 @@ namespace IRON\Complements\Database;
  * Configuracion de las conexiones bb IRON V1
  * @propiedad: IRON V1
  * @utor: Gregorio Bolivar <elalconxvii@gmail.com>
- * @created: 24/12/2018
+ * @created: 28/12/2018
  * @version: 1.0
  */ 
 
@@ -39,11 +39,11 @@ trait ConfigDatabase
    // Puerto de comunicacion con el servidor de base de datos
    $this->port = '5432';
    // Nombre base de datos
-   $this->db = 'balanza_db';
+   $this->db = 'pago_tickets_db';
    // Usuario de acceso a la base de datos
-   $this->user = 'jph';
+   $this->user = 'admin';
    // Clave de acceso a la base de datos
-   $this->pass = 'Jphl10n$135';
+   $this->pass = 'admin';
    // Codificacion de la base de datos
    $this->encoding = 'UTF-8';
    return $this;

@@ -1,10 +1,8 @@
 <?php 
 namespace IRON\Complements\Template;
 use IRON\Core\Commun\{All,Logs};
-use IRON\Core\Store\{Cache};
+use IRON\Core\Store\Cache;
 use IRON\Core\Console\PreInterprete;
-use IRON\Tools\Utility;
-use IRON\Core\Commun\Security;
 
 /**
  * Permite gestionar las vistas del contralador con el componente twig
@@ -15,9 +13,8 @@ use IRON\Core\Commun\Security;
  * @Creation Date: 22/09/2018
  * @version: 0.1
  */
-class Twigs
+class Twigs 
 {
-        use Security;
         use Logs;
         public $cache;
         public $item;
@@ -108,9 +105,6 @@ class Twigs
          */
         public function addExtends(){
               $this->item['All'] = new All();
-              $this->item['Cache'] = new Cache();
-              $this->item['Utility'] = new Utility();
-              $this->item['Session'] = $this->getSessionAll();
               return $this;
         }
 

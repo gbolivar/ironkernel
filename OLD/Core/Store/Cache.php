@@ -8,11 +8,11 @@ use IRON\Core\Commun\All;
  * @Creation Date: 31/07/2017
  * @version: 3.1
  */
-Class Cache Implements InterfCache
+Class Cache
 {
-    private static $cacheDir;// = 'cache';
-    private static $expiryInterval;// = 2592000; //30*24*60*60;
-    private static $files;
+    static $cacheDir;// = 'cache';
+    static $expiryInterval;// = 2592000; //30*24*60*60;
+    static $files;
 
         public  function __construct() {
             self::$cacheDir = All::DIR_SRC .ucfirst(APP).All::APP_CACHE.DIRECTORY_SEPARATOR.'System';
@@ -20,10 +20,10 @@ Class Cache Implements InterfCache
             self::$expiryInterval = 25920000;
         }
  
-        private static function setCacheDir($val) {  self::$cacheDir = $val; }
-        private static function setExpiryInterval($val) {  self::$expiryInterval = $val; }
+        public static function setCacheDir($val) {  self::$cacheDir = $val; }
+        public static function setExpiryInterval($val) {  self::$expiryInterval = $val; }
  
-        private static function exists($key)
+        public static function exists($key)
         {
             $files=self::pathFiles($key);
                 $filename_cache = $files['filename_cache'];
@@ -131,7 +131,7 @@ Class Cache Implements InterfCache
          * @param string $key, valor clave para crear el registro
          * @return object $file, Objeto de los archivos creados
          */
-        private static function pathFiles($key){
+        public static function pathFiles($key){
             $files['filename_cache'] = self::$cacheDir . DIRECTORY_SEPARATOR . md5($key) . '.cache'; //Store filename
             $files['filename_info'] = self::$cacheDir . DIRECTORY_SEPARATOR . md5($key) . '.info'; //Store info
             return $files;
